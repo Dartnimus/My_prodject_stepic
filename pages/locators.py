@@ -18,6 +18,11 @@ class ProductPageLocators():
     VIEW_BASKET_BTN = (By.LINK_TEXT, 'View basket')
     CHECKOUT_NOW_BTN = (By.LINK_TEXT, 'Checkout now')
     BASKET_MSG = (By.XPATH, '//p[normalize-space(text()="Your basket total is now") and strong[text()="{0}"]]')
+    SUCCESS_MESSAGE_ADD_TO_BASKET = (By.CSS_SELECTOR, ".alert-success")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
 
 

@@ -6,14 +6,17 @@ from .login_page import LoginPage
 
 class MainPage(BasePage):
 
-    def should_be_login_link(self):
-        assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
+    # def should_be_login_link(self):
+    #     assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
+    #
+    # def go_to_login_page(self):
+    #     link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
+    #     link.click()
+    #     #При создании объекта мы обязательно передаем ему тот же самый объект
+    #     #драйвера для работы с браузером, а в качестве url передаем текущий адрес.
+    #     #return LoginPage(browser=self.browser, url=self.browser.current_url)
+    #     alert = self.browser.switch_to.alert
+    #     alert.accept()
 
-    def go_to_login_page(self):
-        link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
-        link.click()
-        #При создании объекта мы обязательно передаем ему тот же самый объект
-        #драйвера для работы с браузером, а в качестве url передаем текущий адрес.
-        #return LoginPage(browser=self.browser, url=self.browser.current_url)
-        alert = self.browser.switch_to.alert
-        alert.accept()
+    def __init__(self, *args, **kwargs):
+        super(MainPage, self).__init__(*args, **kwargs)

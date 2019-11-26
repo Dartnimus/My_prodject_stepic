@@ -36,3 +36,19 @@ class ProductPage(BasePage):
         assert self.is_element_present(ProductPageLocators.BASKET_MSG[0],
                                        ProductPageLocators.BASKET_MSG[1].format(price)), \
             'Basket status message is wrong'
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE_ADD_TO_BASKET), \
+            "Success message is presented, but should not be"
+
+    def test_guest_cant_see_success_message_after_adding_product_to_basket(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE_ADD_TO_BASKET), \
+            "Success message is presented, but should not be"
+
+    def test_guest_cant_see_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE_ADD_TO_BASKET), \
+            "Success message is presented, but should not be"
+
+    def test_message_disappeared_after_adding_product_to_basket(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE_ADD_TO_BASKET), \
+            "Success message is presented, but should not be"
